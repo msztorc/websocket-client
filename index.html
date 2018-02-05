@@ -1,0 +1,173 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Websocket client online</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  </head>
+
+  <body class="bg-light">
+      <div class="row bg-silver border-bottom-gray">
+        <div class="col-md-6">
+          <div class="d-flex pl-4 pt-4">
+            <span class="logo"></span><span class="title">WebSocket Client</span><small class="ver">v1</small>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="d-flex align-items-right p-3 text-right">
+            <span id="wamp-status" class="text-red status">&nbsp;&bull;</span>
+            <input class="form-control w-50 mx-2" type="text" placeholder="url" name="url" value="" />
+            <input class="form-control w-25 mx-2" type="text" placeholder="realm" name="realm" value="" />
+            <a href="#" class="w-25 btn btn-primary mx-2" type="text" id="connect-btn">connect</a>
+            <a href="#" class="w-25 btn btn-danger mx-2" type="text" style="display:none;" id="disconnect-btn">disconnect</a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <b class="d-inline-block mt-4 px-3">Publish</b>
+          <div class="pt-4 px-3">
+            <span class="d-flex my-1">message to send</span>
+            <textarea id="message" rows="8" class="w-100 p-2"></textarea>
+            <input type="checkbox" class="mt-2" id="show-my-messages" value="true" checked />&nbsp;subscribe this message
+          </div>
+        </div>
+        <div class="col-md-6">
+          <b class="d-inline-block mt-4 px-3">RPC</b>
+          <div class="pt-4 px-3">
+            <div class="row">
+              <div class="col-md-6">
+                <span class="d-flex my-1">args</span>
+                <input type="text" placeholder="arg 1" class="d-flex form-control w-100" data-rel="rpc_arg" name="rpc_arg_1" /><br />
+                <input type="text" placeholder="arg 2" class="d-flex form-control w-100" data-rel="rpc_arg" name="rpc_arg_2" /><br />
+                <input type="text" placeholder="arg 3" class="d-flex form-control w-100" data-rel="rpc_arg" name="rpc_arg_3" /><br />
+                <input type="text" placeholder="arg 4" class="d-flex form-control w-100" data-rel="rpc_arg" name="rpc_arg_4" /><br />
+              </div>
+              <div class="col-md-6">
+                <span class="d-flex my-1">kwargs</span>
+                <input type="text" placeholder="arg key 1" class="form-control d-inline-block" style="width: 45%;" data-rel="rpc_key" name="rpc_key_1" />&nbsp;=&nbsp;
+                <input type="text" placeholder="arg value 1" class="form-control d-inline-block" style="width: 45%;" data-rel="rpc_key_1" name="rpc_value_1" />
+                <br /><br />
+                <input type="text" placeholder="arg key 2" class="form-control d-inline-block" style="width: 45%;" data-rel="rpc_key" name="rpc_key_2" />&nbsp;=&nbsp;
+                <input type="text" placeholder="arg value 2" class="form-control d-inline-block" style="width: 45%;" data-rel="rpc_key_2" name="rpc_value_2" />
+                <br /><br />
+                <input type="text" placeholder="arg key 3" class="form-control d-inline-block" style="width: 45%;" data-rel="rpc_key" name="rpc_key_3" />&nbsp;=&nbsp;
+                <input type="text" placeholder="arg value 3" class="form-control d-inline-block" style="width: 45%;" data-rel="rpc_key_3" name="rpc_value_3" />
+                <br /><br />
+                <input type="text" placeholder="arg key 4" class="form-control d-inline-block" style="width: 45%;" data-rel="rpc_key" name="rpc_key_4" />&nbsp;=&nbsp;
+                <input type="text" placeholder="arg value 4" class="form-control d-inline-block" style="width: 45%;" data-rel="rpc_key_4" name="rpc_value_4" />
+              </div>
+            </div>
+          </div>   
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="mx-3 px-3 py-4 bg-gray rounded">
+            <div class="d-flex flex-row">
+              <input class="d-flex form-control w-50" type="text" placeholder="topic" name="send-topic">
+              <button class="btn btn-success ml-3 w-25" type="text" id="send-btn">publish</button>
+            </div>
+            <div class="d-flex flex-row mt-2">
+              <input type="checkbox" class="mt-2" id="subscribe-topic" value="true" checked />&nbsp;subscribe topic
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="mx-3 px-3 py-4 bg-gray rounded">
+            <div class="d-flex flex-row">
+              <input class="d-flex form-control w-50" type="text" placeholder="procedure" name="rpc-name">
+              <button class="btn btn-success ml-3 w-25" type="text" id="call-btn">call</button>
+            </div>
+            <div class="d-flex flex-row mt-2">
+              <input type="checkbox" class="mt-2" id="rpc-console" value="true" checked />&nbsp;show results in console
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+      <div class="row">
+        <div class="fixed-bottom bg-purple-dark">
+          <!-- <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">
+                output
+                <span class="badge badge-light">0</span>
+              </a>
+              <span class="close-btn">x</span>
+            </li>
+          </ul> -->
+          <div id="console-resizer" style="height:2px; background-color:rgba(255,255,255,0.3);cursor:n-resize;"></div>
+          <div id="console-body">
+            <div class="d-flex p-3 mx-0 text-white-50 bg-dark">
+              <div class="w-75">
+                <div class="d-flex align-items-center">
+                  <span class="console-label">
+                    console output
+                    <span id="console-count" class="badge badge-light">0</span>
+                  </span>
+                  <a href="#" id="clear-console" class="btn btn-sm btn-danger mr-4">clear</a>
+                  <input type="checkbox" id="pretty-print" value="true" checked />&nbsp;<small>Syntax highlighting</small>
+                </div>
+              </div>
+              <div class="w-25 text-right">
+                <small>Last message: <span id="last-log">-</span></small>
+              </div>
+            </div>
+            <div id="wamp-console" class="scrollbar-y h-300 p-3 mx-0 my-2 text-white-50">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="templates" style="display: none;">
+        <!-- tab template -->
+        <div id="tab-template">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              {name}
+              <span class="badge badge-light">0</span>
+            </a>
+            <span class="close-btn">x</span>
+          </li>
+        </div>
+        <!-- end of tab template -->
+
+        <!-- console template -->
+        <div id="console-template">
+          <div class="d-flex p-3 mx-0 text-white-50 bg-purple">
+            <div class="w-25">
+              <div class="d-flex align-items-center">
+                <a href="#" id="clear-console-{id}" class="btn btn-sm btn-danger mr-4">clear</a>
+                <input type="checkbox" id="pretty-print-{id}" value="true" checked />&nbsp;<small>JSON pretty print</small>
+                <input type="checkbox" id="show-my-messages-{id}" value="true" class="ml-3" checked />&nbsp;<small>show my messages</small>
+              </div>
+            </div>
+            <div class="w-75 text-right">
+              Last message: <span id="last-message-{id}">-</span>
+            </div>
+          </div>
+          <div id="wamp-console-{id}" class="scrollbar-y h-300 p-3 mx-0 my-2 text-white-50">
+          </div>
+        </div>
+        <!-- end of console template -->
+      </div>
+
+      <script src="js/jquery-1.12.4.min.js"></script>
+      <script src="js/tether.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/autobahn.min.js"></script>
+      <script src="js/wamp.js"></script>
+  </body>
+</html>

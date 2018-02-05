@@ -1,0 +1,138 @@
+body {
+  overflow-x: hidden; 
+}
+
+.logo {
+  display:block;
+  width: 32px;
+  height: 32px;
+  background:url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTcuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDIyMi40NjEgMjIyLjQ2MSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjIyLjQ2MSAyMjIuNDYxOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCI+CjxnPgoJPHBhdGggZD0iTTE4OS41NCwwSDMyLjkyMWMtMTMuMzUsMC0yNC4yMSwxMC44NjEtMjQuMjEsMjQuMjFjMCw0LjE0MiwzLjM1OCw3LjUsNy41LDcuNXM3LjUtMy4zNTgsNy41LTcuNSAgIGMwLTUuMDc5LDQuMTMyLTkuMjEsOS4yMS05LjIxSDE4OS41NGM1LjA3OSwwLDkuMjEsNC4xMzIsOS4yMSw5LjIxdjE3NC4wNGMwLDUuMDc5LTQuMTMyLDkuMjEtOS4yMSw5LjIxSDMyLjkyMSAgIGMtNS4wNzksMC05LjIxLTQuMTMyLTkuMjEtOS4yMVY4Ny41NjNjMC00LjE0Mi0zLjM1OC03LjUtNy41LTcuNXMtNy41LDMuMzU4LTcuNSw3LjVWMTk4LjI1YzAsMTMuMzUsMTAuODYxLDI0LjIxLDI0LjIxLDI0LjIxICAgSDE4OS41NGMxMy4zNSwwLDI0LjIxLTEwLjg2MSwyNC4yMS0yNC4yMVYyNC4yMUMyMTMuNzUsMTAuODYxLDIwMi44ODksMCwxODkuNTQsMHoiIGZpbGw9IiMwMDAwMDAiLz4KCTxwYXRoIGQ9Ik0xMTEuMjMsMjIuODc3Yy00LjE0MiwwLTcuNSwzLjM1OC03LjUsNy41djE3Ljk3OUM3Mi4zMzMsNTIuMDgsNDcuODk3LDc4Ljg0Nyw0Ny44OTcsMTExLjIzczI0LjQzNiw1OS4xNTEsNTUuODMzLDYyLjg3NCAgIHYxNy45NzljMCw0LjE0MiwzLjM1OCw3LjUsNy41LDcuNXM3LjUtMy4zNTgsNy41LTcuNXYtMTcuOTdjOS40NTItMS4xMTksMTguNTI2LTQuMzQxLDI2LjU4NS05LjQ5NiAgIGMzLjQ4OS0yLjIzMiw0LjUwOC02Ljg3LDIuMjc2LTEwLjM1OWMtMi4yMzEtMy40ODktNi44NjktNC41MDktMTAuMzU5LTIuMjc2Yy03Ljc1NSw0Ljk2LTE2Ljc0Nyw3LjU4My0yNi4wMDIsNy41ODMgICBjLTI2LjY1MSwwLTQ4LjMzMy0yMS42ODItNDguMzMzLTQ4LjMzM3MyMS42ODItNDguMzMzLDQ4LjMzMy00OC4zMzNzNDguMzMzLDIxLjY4Miw0OC4zMzMsNDguMzMzICAgYzAsNy4xMTEtMS41MDYsMTMuOTU2LTQuNDc3LDIwLjM0NmMtMS43NDYsMy43NTYtMC4xMTcsOC4yMTcsMy42NCw5Ljk2M2MzLjc1NSwxLjc0NSw4LjIxNiwwLjExNiw5Ljk2My0zLjY0ICAgYzMuODk3LTguMzg1LDUuODc0LTE3LjM1Nyw1Ljg3NC0yNi42NjljMC0zMi4zODMtMjQuNDM2LTU5LjE1MS01NS44MzMtNjIuODc0VjMwLjM3N0MxMTguNzMsMjYuMjM1LDExNS4zNzMsMjIuODc3LDExMS4yMywyMi44Nzd6ICAgIiBmaWxsPSIjMDAwMDAwIi8+Cgk8cGF0aCBkPSJNMTA2LjMyLDEwNS45M2MtMS4zOSwxLjM5LTIuMTksMy4zMy0yLjE5LDUuM2MwLDEuOTcsMC44LDMuOTEsMi4xOSw1LjNjMS40LDEuNCwzLjMzLDIuMiw1LjMxLDIuMmMxLjk3LDAsMy45LTAuOCw1LjMtMi4yICAgYzEuNC0xLjM5LDIuMi0zLjMzLDIuMi01LjNjMC0xLjk3LTAuOC0zLjkxLTIuMi01LjNjLTEuNC0xLjQtMy4zMy0yLjItNS4zLTIuMkMxMDkuNjUsMTAzLjczLDEwNy43MiwxMDQuNTMsMTA2LjMyLDEwNS45M3oiIGZpbGw9IiMwMDAwMDAiLz4KCTxwYXRoIGQ9Ik0xMzAuOTMsMTA1LjkzYy0xLjQsMS4zOS0yLjIsMy4zMi0yLjIsNS4zczAuOCwzLjkxLDIuMiw1LjNjMS4zOSwxLjQsMy4zMywyLjIsNS4zLDIuMmMxLjk3LDAsMy45MS0wLjgsNS4zLTIuMiAgIGMxLjQtMS4zOSwyLjItMy4zMywyLjItNS4zYzAtMS45Ny0wLjgtMy45MS0yLjItNS4zYy0xLjM5LTEuNC0zLjMyLTIuMi01LjMtMi4yUzEzMi4zMiwxMDQuNTMsMTMwLjkzLDEwNS45M3oiIGZpbGw9IiMwMDAwMDAiLz4KCTxwYXRoIGQ9Ik04MC45MywxMDUuOTNjLTEuNCwxLjM5LTIuMiwzLjMzLTIuMiw1LjNjMCwxLjk3LDAuOCwzLjkxLDIuMiw1LjNjMS4zOSwxLjQsMy4zMywyLjIsNS4zLDIuMmMxLjk4LDAsMy45MS0wLjgsNS4zLTIuMiAgIGMxLjQtMS4zOSwyLjItMy4zMywyLjItNS4zYzAtMS45Ny0wLjgtMy45MS0yLjItNS4zYy0xLjM5LTEuNC0zLjMzLTIuMi01LjMtMi4yQzg0LjI2LDEwMy43Myw4Mi4zMiwxMDQuNTMsODAuOTMsMTA1LjkzeiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=) no-repeat left center;
+}
+.ver {
+  color:#ccc;
+  font-size:70%;
+}
+
+.bg-purple { background-color: purple; }
+.bg-purple-dark { background-color: #380046; }
+.bg-black { background-color: #000; }
+.bg-green { background-color: #00790f; }
+.bg-red { background-color: #D10000; }
+.bg-silver { background-color: #f7f7f7; }
+.bg-gray { background-color: #DBDBDB; }
+.bg-dark { background-color: rgba(0,0,0,0.3); }
+.text-white { color: #fff; }
+.scrollbar-y { overflow-y: auto; }
+.text-white-50 { color: rgba(255, 255, 255, .5); }
+.h-300 { height:300px; }
+
+.text-red { color: #D70000; }
+.text-green { color: #00790f; }
+
+span.status {
+  line-height: 14px;
+  font-weight: bold;
+  font-size: 70px;
+}
+
+.border-bottom-gray {
+  border-bottom: 1px solid #F1F1F1;
+}
+
+span.title {
+  margin:5px 0 0 15px;
+  color: #b5b5b5;
+  text-shadow: 1px 1px #fff;
+  font-weight: 600;
+}
+
+pre { 
+  color: rgba(255, 255, 255, .5);
+  padding-bottom:15px;
+  border-bottom:1px solid rgba(255, 255, 255, .1); 
+}
+.string { color: green; }
+.number { color: darkorange; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.key { color: red; }
+
+ul.nav-tabs {
+  border:none;
+  padding:0 10px;
+}
+
+.nav-tabs .nav-link {
+    display: block;
+    padding: 3px 20px 3px 10px;
+    margin: 10px 5px;
+    font-size: 13px;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    border:none;
+    color:#fff;
+}
+
+ul.nav-tabs .nav-item {
+  position:relative;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    border-radius: 10px;
+    color: #fff;
+    background-color: #f0f;
+}
+
+.console-label .badge {
+  background-color: rgba(0,0,0,0.5);
+  padding:5px 10px;
+}
+.nav-tabs .close-btn {
+  line-height: 8px;
+  position: absolute;
+  top: 5px;
+  right: 2px;
+  opacity: 1;
+  color: #fff;
+  background-color: red;
+  border-radius: 10px;
+  font-size: 12px;
+  padding: 3px 5px 5px 5px;
+  font-weight: normal;
+}
+
+.console-label {
+    display:inline-block;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #f0f;
+    padding: 3px 10px 3px 10px;
+    margin: 5px 15px 5px 0;
+    font-size: 13px;
+    border-radius: 5px;
+    border:none;
+}
+
+.btn {
+  border-radius:1.2rem;
+}
+
+.btn-danger {
+    color: #fff;
+    border-color: #ce0000;
+    background-color: red;
+}
+
+.btn-success {
+    color: #fff;
+    border-color: #007A0B;
+    background-color: #00900D;
+}
+
+#last-log {
+  border-radius: 10px;
+  background-color: #ff7600;
+  color: #fff;
+  padding: 3px 10px;
+  margin-left: 10px;
+}
